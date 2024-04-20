@@ -7,9 +7,8 @@ typedef struct {
     float Y;
 } Ponto;
 
-double areaTriangulo(Ponto A, Ponto B, Ponto C){
-    double det = ((A.X * B.Y) + (B.X * C.Y) + (C.X * A.Y)) - ((A.Y * B.X) + (B.Y * C.X) + (C.Y * A.X));
-    printf("\nDeterminante = %.2lf\n", fabs(det));
+float areaTriangulo(Ponto A, Ponto B, Ponto C){
+    float det = ((A.X * B.Y) + (B.X * C.Y) + (C.X * A.Y)) - ((A.Y * B.X) + (B.Y * C.X) + (C.Y * A.X));
     return fabs(det) / 2.0;
 }
 
@@ -17,7 +16,7 @@ void CalcularAreaPoligono(char* arquivo){
     FILE* f;
     int numVertices;
     Ponto* vertices;
-    double areaTotal = 0.0;
+    float areaTotal = 0.0;
 
     f = fopen(arquivo, "r");
     if(f == NULL){
